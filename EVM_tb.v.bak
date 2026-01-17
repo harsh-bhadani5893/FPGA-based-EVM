@@ -1,0 +1,107 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 19.10.2025 11:27:44
+// Design Name: 
+// Module Name: EVM_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module EVM_tb();
+    reg clk,reset,mode;
+    reg [3:0]candid_button;
+    wire [3:0]vot_logged;
+    wire valid_vote,invalid_vote;
+  /*  wire [7:0] counter_candid1;
+    wire [7:0] counter_candid2;
+    wire [7:0] counter_candid3;
+    wire [7:0] counter_candid4;
+  */  wire [7:0] display_out;
+    EVM_v3 dut(.clk(clk),.reset(reset),.mode(mode),.candid_button(candid_button),.vot_logged(vot_logged),.valid_vote(valid_vote),.invalid_vote(invalid_vote),.display_out(display_out));
+  // .counter_candid1(counter_candid1),.counter_candid2(counter_candid2),.counter_candid3(counter_candid3),.counter_candid4(counter_candid4),.display_out(display_out));
+    
+     initial begin
+     clk = 0;
+     forever #5 clk = ~clk;
+     end
+     
+     initial begin
+     
+     reset = 1;
+     #20;
+     reset = 0; mode =0;
+     #20     candid_button = 4'b0001;
+    
+     #20     candid_button = 4'b0010;
+     #20     candid_button = 4'b1000;
+     #20     candid_button = 4'b0100;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0010;
+     #20     candid_button = 4'b1000;
+     #20     candid_button = 4'b0100;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0001;  
+     
+     #20     candid_button = 4'b0101;
+     #20     candid_button = 4'b0001;#20     candid_button = 4'b0010;
+       #20     candid_button = 4'b0001;
+        #20     candid_button = 4'b0101;
+    // #20     candid_button = 4'b0101;
+     //reset = 1;
+    // #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0100;
+     #20     candid_button = 4'b1000;
+     //reset = 0;
+     #20     candid_button = 4'b0111;
+    // #20     candid_button = 4'b1111;
+    // #20     candid_button = 4'b1000;
+     #20     candid_button = 4'b0000;
+      #20     candid_button = 4'b0001;
+    
+     #20  mode = 1;
+     #20     candid_button = 4'b1001;
+     #20     candid_button = 4'b1010;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0001;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0010;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b1000;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0100;
+     #20     candid_button = 4'b1001;
+     #20     candid_button = 4'b0000;
+     #20     candid_button = 4'b0100;
+     #20     candid_button = 4'b0100;
+     #20     candid_button = 4'b1011;
+     #20     candid_button = 4'b1111;
+     #20     candid_button = 4'b0010;
+     #40;
+
+   // Finish simulation
+     $finish;
+     #40;
+
+$finish;
+
+     end
+   /* initial begin
+    $monitor("Time=%0t | Mode=%b | Candidates=%b | vot_logged=%b | valid_vote=%b | invalid_vote=%b | Counters: C1=%d, C2=%d, C3=%d, C4=%d | DisplayOut=%d",
+              $time, mode, candid_button, vot_logged, valid_vote, invalid_vote,
+              counter_candid1, counter_candid2, counter_candid3, counter_candid4, display_out);
+end
+*/
+endmodule

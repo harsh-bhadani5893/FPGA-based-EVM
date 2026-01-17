@@ -1,0 +1,91 @@
+
+module EVM(
+    input clk,
+    input reset,
+    input mode,                   // 0 = Voting mode, 1 = Display mode
+    input [3:0] candid_button,    // Candidate buttons
+    output reg [3:0] vot_logged,  // One-hot signal showing which candidate got vote
+    output reg valid_vote,        // One-clock pulse when valid vote counted
+    output reg invalid_vote,      // One-clock pulse when invalid vote counted
+    output reg [7:0] display_out  // Display data output
+);
+
+    // Per-candidate counters
+    reg [7:0] counter_candid [3:0];
+    reg [7:0] total_valid;
+    reg [7:0] total_invalid;
+
+    reg [3:0] candid_button_prev;
+    reg [2:0] popcount;
+    reg [3:0] new_press;
+
+    integer i;
+
+    // 4-bit popcount function
+    function [2:0] count_bits4;
+        input [3:0] b;
+        begin
+            count_bits4 = b[0] + b[1] + b[2] + b[3];
+        end
+    endfunction
+
+    // Sequential logic
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            for (i = 0; i < 4; i = i + 1)
+                counter_candid[i] <= 8'd0;
+            total_valid   <= 8'd0;
+            total_invalid <= 8'd0;
+            vot_logged    <= 4'd0;
+            valid_vote    <= 1'b0;
+            invalid_vote  <= 1'b0;
+            display_out   <= 8'd0;
+            candid_button_prev <= 4'd0;
+        end 
+        else begin
+            // Default values (one-cycle pulses)
+            valid_vote   <= 1'b0;
+            invalid_vote <= 1'b0;
+            vot_logged   <= 4'd0;
+
+            new_press = candid_button & ~candid_button_prev; // detect rising edges
+            candid_button_prev <= candid_button;
+
+            // ---------- MODE 0 : VOTING ----------
+            if (mode == 1'b0) begin
+                if (|new_press) begin
+                    popcount = count_bits4(candid_button);
+
+                    if (popcount > 1) begin
+                        total_invalid <= total_invalid + 1;
+                        invalid_vote <= 1;
+                    end 
+                    else if (popcount == 1) begin
+                        for (i = 0; i < 4; i = i + 1) begin
+                            if (new_press[i]) begin
+                                counter_candid[i] <= counter_candid[i] + 1;
+                                total_valid <= total_valid + 1;
+                                vot_logged <= (4'b0001 << i);
+                                valid_vote <= 1;
+                            end
+                        end
+                    end
+                end
+            end
+            // ---------- MODE 1 : DISPLAY ----------
+            else begin
+                // For display, rotate between showing all counts every few cycles
+                case (candid_button)
+                    4'b0001: display_out <= counter_candid[0]; // candidate 1
+                    4'b0010: display_out <= counter_candid[1]; // candidate 2
+                    4'b0100: display_out <= counter_candid[2]; // candidate 3
+                    4'b1000: display_out <= counter_candid[3]; // candidate 4
+                    4'b1111: display_out <= total_valid;       // total valid
+                    4'b0000: display_out <= total_invalid;     // total invalid
+                    default: display_out <= 8'h00;
+                endcase
+            end
+        end
+    end
+
+endmodule

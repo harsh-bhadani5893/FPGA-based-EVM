@@ -1,0 +1,47 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\M.Tech\Sem1 Lab\Projects\ADSD\New folder\simulation\modelsim
+vEVM
+I76d@jc30[ckH<JPG`@g[03
+Vko^?:T9fIMWHcFhZf=8[`0
+Z1 dF:\M.Tech\Sem1 Lab\Projects\ADSD\New folder\simulation\modelsim
+w1761906435
+8F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM.v
+FF:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@e@v@m
+!i10b 1
+!s100 d1N6m]IQJl3<0ZDgCiQ<m3
+!s85 0
+!s108 1762605213.032000
+!s107 F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder|F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM.v|
+!s101 -O0
+Z4 !s92 -vlog01compat -work work {+incdir+F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder} -O0
+vEVM_tb
+!i10b 1
+!s100 SiR:W9c5XN>4Ama9Qm_C83
+Iin<InZ9kh6n6a75fAO63S1
+VFXJ_QniXjXHj8K@[Bk3TW0
+R1
+w1762594586
+8F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v
+FF:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1762605213.143000
+!s107 F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder|F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v|
+!s101 -O0
+R3
+R4
+n@e@v@m_tb

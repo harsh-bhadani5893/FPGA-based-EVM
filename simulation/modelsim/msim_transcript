@@ -1,0 +1,201 @@
+# Reading F:/ModelSim/modelsim_ase/tcl/vsim/pref.tcl 
+# do EVM_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying F:\ModelSim\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied F:\ModelSim\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+F:/M.Tech/Sem1\ Lab/Projects/ADSD/New\ folder {F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module EVM
+# 
+# Top level modules:
+# 	EVM
+# 
+# vlog -vlog01compat -work work +incdir+F:/M.Tech/Sem1\ Lab/Projects/ADSD/New\ folder {F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module EVM_tb
+# 
+# Top level modules:
+# 	EVM_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  EVM_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/ModelSim/modelsim_ase/altera/verilog/altera
+#             F:/ModelSim/modelsim_ase/altera/verilog/220model
+#             F:/ModelSim/modelsim_ase/altera/verilog/sgate
+#             F:/ModelSim/modelsim_ase/altera/verilog/altera_mf
+#             F:/ModelSim/modelsim_ase/altera/verilog/altera_lnsim
+#             F:/ModelSim/modelsim_ase/altera/verilog/cycloneii
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM
+# vsim work.EVM 
+# Loading work.EVM
+add wave -position insertpoint sim:/EVM/*
+force -freeze sim:/EVM/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/EVM/reset 0 0
+force -freeze sim:/EVM/mode 0 0
+force -freeze sim:/EVM/reset 0 0
+force -freeze sim:/EVM/mode 0 0
+force -freeze sim:/EVM/candid_button 0001 0
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# A bookmark named "bookmark0" has been added for window "Wave"
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Bookmark saving is disabled.
+# The 1 bookmark in window "Wave" has been discarded
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+# Load canceled
+restart -f
+# No Design Loaded!
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM_tb
+# vsim work.EVM_tb 
+# Loading work.EVM_tb
+# ** Error: (vsim-3033) F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/EVM_tb.v(9): Instantiation of 'EVM_v3' failed. The design unit was not found.
+# 
+#         Region: /EVM_tb
+#         Searched libraries:
+#             F:/M.Tech/Sem1 Lab/Projects/ADSD/New folder/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./EVM_run_msim_rtl_verilog.do PAUSED at line 12
+vsim work.EVM
+# vsim work.EVM 
+# Loading work.EVM
+add wave -position insertpoint  \
+sim:/EVM/clk \
+sim:/EVM/reset \
+sim:/EVM/mode \
+sim:/EVM/candid_button \
+sim:/EVM/vot_logged \
+sim:/EVM/valid_vote \
+sim:/EVM/invalid_vote \
+sim:/EVM/display_out \
+sim:/EVM/i \
+sim:/EVM/button_count \
+sim:/EVM/counter_candid1 \
+sim:/EVM/counter_candid2 \
+sim:/EVM/counter_candid3 \
+sim:/EVM/counter_candid4 \
+sim:/EVM/counter_total_valid \
+sim:/EVM/counter_total_Invalid \
+sim:/EVM/candid_button_prev
+run -all
+run -all
